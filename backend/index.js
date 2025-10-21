@@ -19,7 +19,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 const corsOptions = {
-  origin: ["https://mavraudercollections.netlify.app","http://localhost:4000","https://maison-sommeil.onrender.com"],
+  origin: ["https://maison-sommeil.onrender.com"],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
 };
