@@ -15,10 +15,8 @@ import ProductList from "./pages/ProductList";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import Catalogue from "./pages/catalogue";
-import About from "./pages/about";
+import About from "./pages/About";
 import Footer from "./components/Footer";
-import Men from "./pages/Men";
-import Women from "./pages/women";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import ProductManagement from "./pages/admin/AdminProducts";
 import AdminRoute from "./routes/AdminRoute";
@@ -28,6 +26,9 @@ import AdminUsers from "./pages/admin/AdminUsers";
 import { fetchCart } from "./redux/slices/cartSlice";
 import { useEffect } from "react";
 import CategoryPage from "./pages/Category";
+import Contact from "./pages/Contact";
+import OrdersPage from "./pages/admin/Orders";
+import MyOrdersPage from "./pages/UserOrders";
 
 function Layout() {
   const {user}= useSelector((state)=> state.auth)
@@ -35,7 +36,7 @@ function Layout() {
   const location = useLocation();
 
   return user ? (
-    <div className="w-full min-h-screen flex flex-col md:flex-row ">
+    <div className="w-full min-h-screen flex flex-col md:flex-row bg-pink-200">
       <div className="flex-1 overflow-y-auto">
         {<Navbar/>}
 
@@ -67,6 +68,8 @@ function App() {
         <Route element={<Layout />}>
           <Route path="/" element={<Navigate to="/Landing" />} />
           <Route path="/Landing" element={<Landing />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/Contact" element={<Contact />} />
           <Route path="/ProductList" element={<ProductList />} />
           <Route path="/Cart" element={<Cart />} />
           <Route path="/Checkout" element={<Checkout />} />
@@ -74,6 +77,7 @@ function App() {
           <Route path="/About" element={<About />} />
           <Route path="/shop" element={<CategoryPage />} />
           <Route path="/shop/:category" element={<CategoryPage />} />
+          <Route path="/myorders" element={<MyOrdersPage />} />
         </Route>
         {/* <Route path="/admin/*" element={user?.isAdmin ? <AdminDashboard /> : <Navigate to="/" />} /> */}
         <Route path="/log-in" element={<Login />} />
@@ -85,7 +89,7 @@ function App() {
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="inventory" element={<AdminInventory />} />
         <Route path="users" element={<AdminUsers />} />
-        <Route path="orders" element={<ProductManagement />} />
+        <Route path="orders" element={<OrdersPage />} />
 
       </Route>
      </Route>

@@ -3,7 +3,7 @@ import { toast } from "sonner";
 // import { addToCart } from "../redux/slices/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Button from "./Button";
-import twos from "../assets/images/two4one.jpg";
+import twos from "../assets/images/discount.jpg";
 import { MdOutlineShoppingBag } from "react-icons/md";
 import { useGetProductsQuery } from "../redux/slices/api/productApiSlice";
 import { addToCart } from "../redux/slices/cartSlice";
@@ -91,7 +91,7 @@ export default function SimilarProducts({ ads = [] }) {
     </div>
 
       <div className="flex flex-col md:flex-row justify-between gap-4 mt-10">
-        <div className="w-auto max-w-1/2 ">
+        <div className="w-auto md:max-w-1/2 ">
         <img src= {twos} alt="two for one hoodie-set" className="object-contain w-full" />
         </div>
         <div className="w-full"></div>
@@ -120,7 +120,7 @@ export default function SimilarProducts({ ads = [] }) {
               </Link>
 
               {/* Details section (not inside the Link) */}
-              <div className="bg-white p-2 relative">
+              <div className=" p-2 relative">
                 <h3 className="mt-4 font-semibold text-lg">{item.name}</h3>
                 <div className="flex items-center">
                   <span className="font-semibold">{item.noColors} colors</span>

@@ -196,7 +196,7 @@ export const uploadImage = async (req, res) => {
     }
 
     const result = await cloudinary.uploader.upload_stream(
-      { resource_type: 'image', folder: 'fashion-ecommerce' },
+      { resource_type: 'image', folder: 'Maison Sommeil' },
       (error, result) => {
         if (error) {
           console.error(error);
@@ -213,3 +213,5 @@ export const uploadImage = async (req, res) => {
     res.status(500).json({ message: 'Server error' });
   }
 };
+
+

@@ -1,12 +1,12 @@
 import React, { Fragment, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Outlet, NavLink } from 'react-router-dom';
+import { Outlet, NavLink, useNavigate } from 'react-router-dom';
 import Button from '../../components/Button';
 import Sidebar from '../../components/Sidebar';
 import { setOpenSidebar } from '../../redux/slices/authSlice';
 import { Transition } from '@headlessui/react';
 import clsx from 'clsx';
-import { IoClose } from 'react-icons/io5';
+import { IoArrowBack, IoClose } from 'react-icons/io5';
 import AdminNavbar from '../../components/AdminNavbar';
 
 export default function AdminDashboard() {
@@ -29,7 +29,7 @@ export default function AdminDashboard() {
         <div className="flex-1 Overflow-y-auto bg-gray-500 ">
         <AdminNavbar/>
 
-        <div className="p-4 2xl:px-10">
+        <div className=" bg-pink-200 p-4 2xl:px-10">
         <Outlet/>
        </div>
        </div>
@@ -42,6 +42,7 @@ const MobileSidebar = ()=>{
   const {isSidebarOpen} = useSelector((state)=>state.auth);
   const mobileMenuRef = useRef(null)
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const closeSidebar = ()=> {
     dispatch(setOpenSidebar(false))
@@ -68,10 +69,13 @@ const MobileSidebar = ()=>{
       leaveTo="-translate-x-full"
     >
       <div
-        className="relative w-3/5 max-w-xs h-full bg-white dark:bg-gray-800 shadow-xl"
+        className="relative w-3/5 max-w-xs h-full bg-white shadow-xl"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex justify-end p-4">
+        <div className="flex justify-between  p-4">
+          <button onClick= {()=> navigate('/Landing')}>
+            <IoArrowBack size={24} />
+          </button>
           <button onClick={closeSidebar}>
             <IoClose size={24} />
           </button>

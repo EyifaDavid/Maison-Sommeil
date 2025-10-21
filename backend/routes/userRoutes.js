@@ -1,6 +1,7 @@
 import express from "express"
 import {protectRoute, isAdminRoute} from "../middleware/authMiddleware.js"
 import { getAllUsers, getUserById, addUser, deleteUser, registerUser, loginUser, logoutUser } from "../controllers/userController.js"
+import { getDashboardStats } from "../controllers/adminController.js";
 
 
 const router = express.Router();

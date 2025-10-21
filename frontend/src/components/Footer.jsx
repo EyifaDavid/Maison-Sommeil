@@ -3,13 +3,13 @@ import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 // components/Footer.jsx
 export default function Footer() {
   return (
-    <footer className="bg-black text-gray-100 py-10 px-6 mt-">
+    <footer className="bg-pink-500 text-gray-100 py-10 px-6 mt-">
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8">
 
         {/* Brand */}
         <div>
-          <h2 className="text-xl font-bold">Mavrauder</h2>
-          <p className="text-sm mt-2 text-gray-400">
+          <h2 className="text-xl font-bold">Maison Sommeil</h2>
+          <p className="text-sm mt-2 text-black">
             Your go-to for stylish, affordable fashion. Once you fuck with us we bet you'd keep on coming for more
           </p>
           <div className="flex gap-2 pt-6">
@@ -83,7 +83,7 @@ export default function Footer() {
         {/* Links */}
         <div>
           <h3 className="font-semibold mb-2">Shop</h3>
-          <ul className="space-y-1 text-sm text-gray-400">
+          <ul className="space-y-1 text-sm text-black">
             <li><a href="shop/men">Men</a></li>
             <li><a href="shop/women">Women</a></li>
             <li><a href="/shop">All</a></li>
@@ -93,7 +93,7 @@ export default function Footer() {
         {/* About */}
         <div>
           <h3 className="font-semibold mb-2">Company</h3>
-          <ul className="space-y-1 text-sm text-gray-400">
+          <ul className="space-y-1 text-sm text-black">
             <li><a href="/About">About Us</a></li>
             <li><a href="#">Careers</a></li>
             <li><a href="#">Contact</a></li>
@@ -103,7 +103,7 @@ export default function Footer() {
         {/* Socials */}
         <div>
           <h3 className="font-semibold mb-2">Our Information</h3>
-          <ul className="space-y-1 text-sm text-gray-400">
+          <ul className="space-y-1 text-sm text-black">
             <li><a href="/About">Privacy</a></li>
             <li><a href="#">User Terms & Condition</a></li>
             <li><a href="#">Return Policy</a></li>
@@ -114,8 +114,8 @@ export default function Footer() {
          {/* Contact Info */}
         <div>
           <h3 className="font-semibold mb-2">Contact Info</h3>
-          <p className="space-y-1 text-sm text-gray-400">+233-270-220062</p>
-          <p className="space-y-1 text-sm text-gray-400">eyifadavidson@gmail.com</p>
+          <p className="space-y-1 text-sm text-black">+233-270-220062</p>
+          <p className="space-y-1 text-sm text-black">eyifadavidson@gmail.com</p>
         </div>
 
       </div>

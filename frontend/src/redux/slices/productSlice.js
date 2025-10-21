@@ -46,12 +46,6 @@ const initialState = {
       noColors: "3",
       colors: ["#000000", "#ffffff", "#be123c"],
     },
-      // { id: 4, name: "Womens 365 Lightweight Short Pyjama", price: 25, image: [womensPyjama] , noColors: "3", colors: ['#000000', '#ffffff', '#be123c'], countInStock: 5,},
-      // { id: 4, name: "Denim Jacket", price: 25, image: [kidPyjama] ,  noColors: "3", colors: ['#000000', '#ffffff', '#be123c'],countInStock: 5, },
-      // { id: 5, name: "Sneakers", price: 80, image: [bHoodie] ,  noColors: "3", colors: ['#000000', '#ffffff', '#be123c'] ,countInStock: 5,},
-      // { id: 7, name: "Jeans", price: 50, image: [pHoodie] ,  noColors: "3", colors: ['#000000', '#ffffff', '#be123c'],countInStock: 5, },
-      // { id: 8, name: "Cap", price: 15, image: [kidHoodie] ,  noColors: "3", colors: ['#000000', '#ffffff', '#be123c'],countInStock: 5,},
-      // { id: 9, name: "Cap1", price: 15, image: [gHoodie] ,  noColors: "3", colors: ['#000000', '#ffffff', '#be123c'],countInStock: 5,},
     
   ],
 };

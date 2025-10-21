@@ -59,7 +59,7 @@ export default function CategoryPage() {
     url += `?${params.toString()}`;
   }
 
-  console.log("Final Fetch URL:", url); // Debug helper
+  console.log("Final Fetch URL:", url);
 
     const fetchProducts = async () => {
       try {

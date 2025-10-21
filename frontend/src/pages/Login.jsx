@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import Textbox from "../components/Textbox";
 import Button from "../components/Button";
-import devX from "../assets/images/devx.jpg";
+import devX from "../assets/images/maisonlogo.png";
 import { useDispatch, useSelector } from "react-redux";
 import { setCredentials } from "../redux/slices/authSlice";
 import { tokenIsValid } from "../../../backend/utils/token";
@@ -86,18 +86,18 @@ useEffect(() => {
   };
 
   return (
-    <div className="w-full min-h-screen flex items-center justify-center flex-col lg:flex-row bg-[#F5F5F5]">
+    <div className="w-full min-h-screen flex items-center justify-center flex-col lg:flex-row bg-pink-200">
       <div className="w-full md:1/3 p-4 md:p-1 flex flex-col justify-center items-center gap-4">
         <div className="w-full gap-0.5 flex flex-row justify-center items-center">
           <img src={devX} alt="" className="p-2 rounded-full w-20" />
           <p className="flex flex-col gap-0 md:gap-4 text-2xl md:text-5xl 2xl:text-6xl font-black text-center text-black">
-            Mavrauder Collection
+            Maison Sommeil
           </p>
         </div>
 
         <form
           onSubmit={handleSubmit(step === "email" ? handleEmailSubmit : handleCodeSubmit)}
-          className="form-container w-full md:w-[700px] flex flex-col gap-y-6 bg-white px-10 pt-10 pb-14"
+          className="form-container w-full md:w-[480px] flex flex-col gap-y-6 bg-white px-10 pt-10 pb-14"
         >
           <div className="">
             <p className="text-black text-3xl font-bold text-start">

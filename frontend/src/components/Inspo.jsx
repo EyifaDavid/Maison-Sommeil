@@ -9,7 +9,7 @@ const Inspo = ({title= "Inspiration",description="", inspos = []}) => {
     <div className="m-4 flex justify-center items-center">
       <div className="w-[650px] text-center">
       <h1 className="text-2xl pb-2 font-semibold">{title}</h1>
-      <h2 className=" font-semibold">{description}Explore how The PANGAIA Family style our trending pieces</h2>
+      <h2 className=" font-semibold">{description}Explore how the Maison Sommeil Family style our trending pieces</h2>
     
       </div>
     </div>
@@ -23,12 +23,12 @@ const Inspo = ({title= "Inspiration",description="", inspos = []}) => {
             key={inspo.id}
             to={`/inspo/${inspo.id}`}
             state={{ inspo }}
-            className="min-w-[300px] shadow-md rounded-lg p-2 overflow-hidden"
-          ><div className="bg-amber-50">
+            className="min-w-[300px] shadow-md rounded-lg overflow-hidden"
+          ><div className=" aspect-[3/4] max-h-[400px] overflow-hidden rounded-md">
             <img
               src={inspo.image}
               alt={inspo.name}
-              className="h-full w-full object-contain rounded"
+              className="h-full w-full object-cover rounded"
             />
             </div>
 

@@ -155,7 +155,8 @@ const totalAfterDiscount = totalBeforeDiscount - totalDiscountAmount;
       </div>
 
       {/* Order Summary */}
-      <div className="w-full md:w-72 p-4 border border-gray-300 rounded shadow-sm bg-white">
+      {cartItems.length > 0 && (
+          <div className="w-full md:w-72 p-4 border border-gray-300 rounded shadow-sm bg-white">
         <h3 className="text-lg font-semibold mb-4">Order Summary</h3>
         <p className="mb-2">
           Items: <strong>{cartItems.length}</strong>
@@ -188,6 +189,8 @@ const totalAfterDiscount = totalBeforeDiscount - totalDiscountAmount;
        
         
       </div>
+      )}
+    
 
     </div>
   );

@@ -2,10 +2,11 @@ import React from 'react';
 import { FaBox, FaBoxOpen, FaHome, FaTasks, FaTrashAlt, FaUsers } from "react-icons/fa";
 import { MdDashboard, MdDashboardCustomize, MdInventory, MdOutlineAddTask, MdOutlineDashboard, MdOutlinePendingActions, MdSettings, MdShoppingBag, MdTaskAlt } from "react-icons/md";
 import { useDispatch, useSelector } from 'react-redux';
-import devX from "../assets/images/devx.jpg"
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import devX from "../assets/images/maisonlogo.png"
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import clsx from 'clsx';
 import { setOpenSidebar } from '../redux/slices/authSlice';
+import { IoArrowBack } from 'react-icons/io5';
 
 
 const linkData =[
@@ -46,6 +47,7 @@ const Sidebar = () => {
 
     const dispatch = useDispatch()
     const location = useLocation()
+    const navigate = useNavigate();
     
     const path = location.pathname.split("/")[1]
 
@@ -69,7 +71,13 @@ const Sidebar = () => {
   return (
     <div className=' min-h-full flex flex-col gap-6 p-5 bg-[#F5F5F5]'>
 
+
         <div className='flex items-center  '>
+            <div className='mr-2'>
+            <button onClick= {()=> navigate('/Landing')}>
+          <IoArrowBack size={24} />
+            </button>
+            </div>
         <img src={devX}
         className=' p-2 rounded-full w-20'>
         </img>

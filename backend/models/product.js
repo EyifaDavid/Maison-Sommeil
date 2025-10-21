@@ -2,9 +2,9 @@
 import mongoose, { Schema } from "mongoose";
 
 const productSchema = new Schema({
-  name: { type: String, required: true },
+  name: { type: String, required: true, trim: true, },
   description: { type: String, },
-  price: { type: Number, required: true },
+  price: { type: Number, required: true, min: [0,'Price cannot be negative'] },
   category: {
     type: String,
     required: true,
@@ -21,7 +21,6 @@ const productSchema = new Schema({
   isTrashed: { type: Boolean, default: false },
   discount: { type: Number, default: 0 }, // Percentage discount, e.g., 20 for 20% off
   specialOffer: { type: Boolean, default: false }, // True if on special offer
-
   activities: [
     {
       type: {

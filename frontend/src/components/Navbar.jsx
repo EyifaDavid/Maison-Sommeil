@@ -24,7 +24,7 @@ const Navbar = () => {
   
 
   return (
-    <div className="bg-white sticky top-0 z-10 shadow-sm">
+    <div className=" bg-pink-200 sticky top-0 z-10 shadow-sm">
       <div className="flex justify-between items-center px-4 py-2">
         {/* Mobile hamburger */}
         <div className="md:hidden">
@@ -33,22 +33,23 @@ const Navbar = () => {
           </button>
         </div>
         
+        {/*  logo */}
+            <div className="text-md font-bold flex-1 text-center md:text-left md:flex-none">
+              Maison Sommeil.
+            </div>
 
-        {/* Left Nav - desktop only */}
+        {/* Nav - desktop only */}
         <nav className=" text-[10px] hidden md:flex gap-x-5 items-center">
           <a href="/" className="hover:border-b-1">Home</a>
-          <a href="/shop/women" className="hover:border-b-1">Women</a>
-          <a href="/shop/men"className="hover:border-b-1">Men</a>
+          <a href="/shop" className="hover:border-b-1">Shop</a>
+          <a href="/about"className="hover:border-b-1">About</a>
+          <a href="/contact"className="hover:border-b-1">Contact</a>
           {/* <a href="#"className="hover:border-b-1">Kids</a>
           <a href="#"className="hover:border-b-1">Our mission</a>
           <a href="#"className="hover:border-b-1">Archive</a> */}
         </nav>
 
-        {/* Center logo */}
-        <div className="text-2xl font-bold flex-1 text-center md:text-left md:flex-none">
-          Mavrauder
-        </div>
-
+   
         {/* Right content */}
         <div className="hidden md:flex items-center gap-4">
           <div className="text-[10px] flex items-center gap-4">
@@ -59,7 +60,6 @@ const Navbar = () => {
             <MdAdminPanelSettings/>
           </a>
               )}
-            <a href="#" className=" text-blue-500">Inner Circle</a>
           </div>
            
           {/* Search bar for desktop */}
@@ -73,7 +73,7 @@ const Navbar = () => {
           </div>
 
           <div className="flex gap-3">
-            <MdOutlineFlagCircle size={18} className="hover:cursor-pointer"/>
+            {/* <MdOutlineFlagCircle size={18} className="hover:cursor-pointer"/> */}
             <UserAvatar/>
             {/* <MdOutlinePerson size={18} className="hover:cursor-pointer"/> */}
               <Link to= "/cart"
@@ -110,10 +110,11 @@ const Navbar = () => {
 
       {/* Mobile dropdown menu */}
       {menuOpen && (
-        <div className="md:hidden px-4 pb-3 pt-2 space-y-3 bg-white shadow">
+        <div className="md:hidden px-4 pb-3 pt-2 space-y-3 bg-pink-200">
           <a href="/" className="block">Home</a>
-          <a href="/shop/women" className="block">Women</a>
-          <a href="/shop/men" className="block">Men</a>
+          <a href="/shop" className="block">Shop</a>
+          <a href="/about"className="block">About</a>
+          <a href="/contact"className="block">Contact</a>
         </div>
       )}
     </div>

@@ -78,7 +78,7 @@ export default function DisplaySlider({ displays = [] }) {
               className="h-full w-full object-cover rounded"
             />
 
-             <div className="bg-black h-2/4 flex pt-10 p-4 justify-center items-center gap-20 absolute inset-0 top-40">
+             <div className="bg-pink-600 h-2/4 flex pt-10 p-4 justify-center items-center gap-20 absolute inset-0 top-40">
                 <Button
                 label="Find Out More"
                 type="Submit"
