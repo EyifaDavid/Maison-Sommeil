@@ -25,7 +25,7 @@ const upload = multer({ dest: 'uploads/' }); // Temporary upload dir
 
 
 const corsOptions = {
-  origin: ["https://mavraudercollections.netlify.app","http://localhost:4000"],
+  origin: ["https://mavraudercollections.netlify.app","http://localhost:4000","https://maison-sommeil.onrender.com"],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
 };
