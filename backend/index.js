@@ -9,6 +9,10 @@ import dbConnection from "./utils/index.js";
 import cookieParser from "cookie-parser";
 import { errorHandler, routeNotFound } from "./middleware/errorMiddleware.js";
 import routes from "./routes/index.js"
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 
 dotenv.config();
@@ -56,8 +60,7 @@ app.use(cookieParser());
 app.use("/api", routes)
 
 
-const __dirname = path.resolve();
-app.use(express.static(path.join(__dirname, "../frontend/dist")));
+const frontendPath = path.resolve(__dirname, "../frontend/dist");
 app.use(express.static(frontendPath));
 
 app.get("*", (req, res) =>
