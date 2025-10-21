@@ -22,7 +22,7 @@ import female2 from "../assets/images/inspo3.jpg"
 import twos from "../assets/images/two4one.jpg";
 import ProductSlider from "../components/ProductSlider";
 import SimilarProducts from "../components/SimilarProducts";
-import Inspo from "../components/inspo";
+import Inspo from "../components/Inspo";
 import DisplaySlider from "../components/DisplaySlider";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
