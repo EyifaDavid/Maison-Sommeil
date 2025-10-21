@@ -57,10 +57,11 @@ app.use("/api", routes)
 
 
 const __dirname = path.resolve();
-app.use(express.static(path.join(__dirname, "/frontend/dist")));
+app.use(express.static(path.join(__dirname, "../frontend/dist")));
+app.use(express.static(frontendPath));
 
 app.get("*", (req, res) =>
-  res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"))
+  res.sendFile(path.join(frontendPath, "index.html"))
 );
 
 app.use(routeNotFound)
