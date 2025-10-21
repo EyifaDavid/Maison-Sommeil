@@ -6,7 +6,7 @@ import {
   Routes,
   useLocation,
 } from "react-router-dom";
-import Landing from "./pages/landing";
+import Landing from "./pages/Landing";
 import Login from "./pages/Login";
 import { Toaster } from "sonner";
 import { useDispatch, useSelector } from "react-redux";
@@ -14,7 +14,7 @@ import Navbar from "./components/Navbar";
 import ProductList from "./pages/ProductList";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
-import Catalogue from "./pages/catalogue";
+import Catalogue from "./pages/Catalogue";
 import About from "./pages/About";
 import Footer from "./components/Footer";
 import AdminDashboard from "./pages/admin/AdminDashboard";
