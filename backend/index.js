@@ -60,5 +60,31 @@ app.use((req, res, next) => {
 app.use(routeNotFound);
 app.use(errorHandler);
 
+const transporter = nodemailer.createTransport({
+  host: process.env.EMAIL_HOST,
+  port: process.env.EMAIL_PORT,
+  secure: false,
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
+  },
+});
+
+app.get("/test-email", async (req, res) => {
+  try {
+    await transporter.sendMail({
+      from: `"Mailgun Test" <${process.env.EMAIL_USER}>`,
+      to: "YOUR_PERSONAL_EMAIL@gmail.com",
+      subject: "Mailgun SMTP Test ✔️",
+      text: "If you got this, your Render server can send emails!",
+    });
+
+    res.send("✅ Test email sent successfully!");
+  } catch (err) {
+    console.error("❌ Error sending test email:", err);
+    res.status(500).send(`Error: ${err.message}`);
+  }
+});
+
 // Start server
 app.listen(PORT, () => console.log(`Server listening on http://localhost:${PORT}`));
