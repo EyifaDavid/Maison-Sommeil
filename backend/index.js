@@ -8,14 +8,14 @@ import { errorHandler, routeNotFound } from "./middleware/errorMiddleware.js";
 import routes from "./routes/index.js"
 import { fileURLToPath } from "url";
 import path from "path";
-import nodemailer from "nodemailer";
-
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 dotenv.config();
 dbConnection();
+
+console.log('RESEND_API_KEY exists:', !!process.env.RESEND_API_KEY);
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -61,32 +61,6 @@ app.use((req, res, next) => {
 // Error handlers (must be last)
 app.use(routeNotFound);
 app.use(errorHandler);
-
-const transporter = nodemailer.createTransport({
-  host: process.env.EMAIL_HOST,
-  port: process.env.EMAIL_PORT,
-  secure: false,
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
-
-app.get("/test-email", async (req, res) => {
-  try {
-    await transporter.sendMail({
-      from: `"Mailgun Test" <${process.env.EMAIL_USER}>`,
-      to: "YOUR_PERSONAL_EMAIL@gmail.com",
-      subject: "Mailgun SMTP Test ✔️",
-      text: "If you got this, your Render server can send emails!",
-    });
-
-    res.send("✅ Test email sent successfully!");
-  } catch (err) {
-    console.error("❌ Error sending test email:", err);
-    res.status(500).send(`Error: ${err.message}`);
-  }
-});
 
 // Start server
 app.listen(PORT, () => console.log(`Server listening on http://localhost:${PORT}`));
